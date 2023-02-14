@@ -4,7 +4,7 @@ import ProductTitle from "./ProductTitle";
 import ShoppingButton from "./ShoppingButton";
 
 
-export default function Product({name, cat, price, img}){
+export default function Product({name, cat, price, img, proid, cartItem, setCartItem}){
     return (
         <article className="product-card">
             {/* får å få bilder legger man det i public */}
