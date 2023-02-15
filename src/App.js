@@ -15,12 +15,15 @@ const cartStart = [
 ]
 
 function App() {
-  const [cartItems, setCartItem] = useState(...cartStart)
+  const [cartItem, setCartItem] = useState([...cartStart])
+  const [amount, setAmount] = useState(0)
+
+  
   return (
     <div className="container">
-        <Header/>
+        <Header cartItem={cartItem} amount={amount}/>
         <Nav />
-        <ContentPage cartItems={cartItems} setCartItem={setCartItem}/>
+        <ContentPage cartItem={cartItem} setCartItem={setCartItem} setAmount={setAmount}/>
     </div>
   );
 }

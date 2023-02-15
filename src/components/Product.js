@@ -1,10 +1,19 @@
+import Form from "./Form";
 import ProductCategory from "./ProductCategory";
 import ProductPrice from "./ProductPrice";
 import ProductTitle from "./ProductTitle";
-import ShoppingButton from "./ShoppingButton";
 
 
-export default function Product({name, cat, price, img, proid, cartItem, setCartItem}){
+
+export default function Product({name, cat, price, img, prodid, cartItem, setCartItem, setAmount}){
+    const handleClick = ()=>{
+        // prev legger på og erstatter ikke
+        setCartItem((prev) =>[
+            {title: name, price: price, prodid: prodid}, ...prev
+        ])
+        console.log(cartItem)
+        setAmount((prev)=> prev + Number(price))
+    }
     return (
         <article className="product-card">
             {/* får å få bilder legger man det i public */}
@@ -12,7 +21,7 @@ export default function Product({name, cat, price, img, proid, cartItem, setCart
             <ProductTitle name={name}  />
             <ProductCategory cat={cat} />
             <ProductPrice price={price} />
-            <ShoppingButton />
+            <Form name={name} handleClick={handleClick}/>
         </article>
     )
 }

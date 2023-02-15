@@ -1,7 +1,7 @@
 import products from '../products.json'
 import PageTitle from './PageTitle'
 import Product from './Product'
-export default function ContentPage({name, cartItem, setCartItem}){
+export default function ContentPage({name, cartItem, setCartItem, setAmount}){
     return (
         <main>
             <PageTitle/>
@@ -16,7 +16,8 @@ export default function ContentPage({name, cartItem, setCartItem}){
              img= {product.imagefile} 
              cartItem={cartItem}
              setCartItem={setCartItem}
-             proid={product.prodid}/>
+             prodid={product.prodid}
+             setAmount={setAmount}/>
               )
                 } 
               )}
